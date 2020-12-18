@@ -5,8 +5,8 @@ const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveButton = document.getElementById("jsSave");
 
-canvas.width = window.innerWidth * 0.9;
-canvas.height = window.innerHeight * 0.7;
+canvas.width = window.innerWidth * 0.95;
+canvas.height = window.innerHeight * 0.85;
 
 // fill canvas with white background by default
 ctx.fillStyle = "white";
@@ -14,7 +14,7 @@ ctx.fillRect(0,0,canvas.width, canvas.height);
 
 ctx.strokeStyle = "#2c2c2c";
 ctx.fillStyle = "#2c2c2c";
-ctx.lineWidth = 2.5;
+ctx.lineWidth = 2;
 
 // manage painting state
 let painting = false;
