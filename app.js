@@ -4,6 +4,7 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveButton = document.getElementById("jsSave");
+const refButton = document.getElementById("ref");
 
 canvas.width = window.innerWidth * 0.95;
 canvas.height = window.innerHeight * 0.85;
@@ -44,6 +45,8 @@ function handleColorClick(event) {
     const color = event.target.style.backgroundColor;
     ctx.strokeStyle = color;
     ctx.fillStyle = color;
+    
+    // event.target.style.backgroundColor = "red";  // WIP
 }
 
 function handleRangeChange(event) {
@@ -61,16 +64,17 @@ function handleModeClick() {
     }
 }
 
-function handleCanvasClick(){
-    if (filling) {
-        ctx.fillRect(0,0,canvas.width, canvas.height);
-    }
-}
+// function handleCanvasClick(){
+//     if (filling) {
+//         ctx.fillRect(0,0,canvas.width, canvas.height);
+//     } 
+// }
 
-function handleContextMenu(event) {
-    event.preventDefault();
-}
+// function handleContextMenu(event) {
+//     event.preventDefault();
+// }
 
+// save to downloads (as png file)
 function handleSaveClick() {
     const image = canvas.toDataURL();
     const link = document.createElement("a");
@@ -84,10 +88,19 @@ if (canvas) {
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
-    canvas.addEventListener("click", handleCanvasClick);
-    canvas.addEventListener("contextmenu", handleContextMenu);
+
+    canvas.addEventListener("click", () => {
+        if (filling) {
+            ctx.fillRect(0,0,canvas.width, canvas.height);
+        }
+    });
+
+    canvas.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+    });
 }
 
+// put colors into an array
 Array.from(colors).forEach(color => 
     color.addEventListener("click", handleColorClick)
 );
@@ -103,3 +116,8 @@ if (mode) {
 if (saveButton) {
     saveButton.addEventListener("click", handleSaveClick);
 }
+
+refButton.addEventListener('click', ()=> {
+    ctx.lineWidth = 2;
+    location.reload();
+});
