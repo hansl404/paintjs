@@ -121,3 +121,9 @@ refButton.addEventListener('click', ()=> {
     ctx.lineWidth = 2;
     location.reload();
 });
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth * 0.95;
+    canvas.height = window.innerHeight * 0.85;
+});
+
