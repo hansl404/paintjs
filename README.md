@@ -1,5 +1,5 @@
 # paintjs
-Simple paint app made with vanilla JS. 
+Simple paint app made with vanilla JS. Additional features to be added.
 
 How to Use
 --------------------------
@@ -7,8 +7,6 @@ How to Use
 * Select the "Fill" button and click anywhere on the canvas to fill the background with a specified color. Click the same button to resume drawing (will be titled "paint" when currently in fill mode and "fill when currently in paint mode").
 * Click the save button to save the canvas to downloads.
 
-! Dimension sensitive !
+! Warning !
 --------------------------
-* For best results, start and end painting on same dimensions, or there will be an offset between the cursor and where the painting is being done. 
-
-* Refresh the browser if dimensions are changed to prevent offset between canvas and cursor
+* Resizing the window will clear previous work. For best results, work with the same window size.
