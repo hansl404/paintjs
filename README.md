@@ -1,6 +1,10 @@
 # paintjs
 Simple paint app made with vanilla JS. Additional features to be added.
 
+How to Run
+--------------------------
+Run index.html with a web browser
+
 How to Use
 --------------------------
 * Use the slider to adjust brush size (left for smaller brush size, right for larger brush size).
