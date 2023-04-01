@@ -1,5 +1,5 @@
 # paintjs
-Simple paint app made with vanilla JS. Additional features to be added.
+Simple paint app made with vanilla JS. Additional features to be added. [View the deployed app](https://hansl.us/paintjs/)
 
 How to Run
 --------------------------
